@@ -1,0 +1,17 @@
+<div class="container">
+  <form [formGroup]="formSearch" (ngSubmit)="search()">
+    <div class="col-md-4">
+      <mat-form-field appearance="fill">
+        <mat-label>Search for a gif</mat-label>
+        <input type="text" matInput formControlName="search">
+        <button type="submit" mat-flat-button color="primary">Search</button>
+      </mat-form-field>
+    </div>
+  </form>
+  <mat-grid-list cols="6" rowHeight="1:1">
+    <mat-grid-tile *ngFor="let result of searchResults">
+      <img [src]="result.images.downsized_medium.url">
+    </mat-grid-tile>
+  </mat-grid-list>
+  
+</div>
